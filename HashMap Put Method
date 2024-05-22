@@ -1,0 +1,20 @@
+//HashMap Put Method
+import java.util.HashMap;
+public class Main{
+    public static void main(String[] args){
+        HashMap<String, Integer>map= new HashMap<>();
+        map.put("Dinesh",25);
+        map.put("Pvp",25);
+        map.put("Vineeth",25);
+        map.put("Rohith",30);
+        System.out.println(map.size());
+        System.out.println(map);
+    }
+}
+
+Output:-
+java -cp /tmp/5tbBE3aQAc/Main
+4
+{Dinesh=25, Rohith=30, Pvp=25, Vineeth=25}
+
+=== Code Execution Successful ===
