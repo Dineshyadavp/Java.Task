@@ -1,0 +1,27 @@
+//HashMap Remove & Put Method
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+		HashMap<String, Integer>map = new HashMap<>();
+		map.put("Dinesh", 25);
+		map.put("PVP", 26);
+		map.put("Vineeth", 27);
+		map.put("Rohith", 30);
+		map.put("Shiva", 28);
+		map.put("Kumar", 29); 
+	map.put("Venkatesh", null);
+		System.out.println("Original Map: "+ map);
+		map.put("Prasad", 31);
+		map.remove("Venkatesh");
+		System.out.println("Updated Map: "+map);
+		System.out.println(map.keySet());
+		System.out.println(map.values());
+	}
+}
+Output:-
+Original Map: {Kumar=29, Dinesh=25, Rohith=30, PVP=26, Vineeth=27, Shiva=28, Venkatesh=null}
+Updated Map: {Prasad=31, Kumar=29, Dinesh=25, Rohith=30, PVP=26, Vineeth=27, Shiva=28}
+[Prasad, Kumar, Dinesh, Rohith, PVP, Vineeth, Shiva]
+[31, 29, 25, 30, 26, 27, 28]
+
+=== Code Execution Successful ===
