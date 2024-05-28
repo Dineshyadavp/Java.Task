@@ -1,0 +1,107 @@
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.Arrays;
+import java.util.function.IntPredicate;
+
+public class Stack {
+  private int[] arr;
+  private int top;
+
+  public Stack(int size) {
+    arr = new int[size];
+    top = -1;
+  }
+
+  public void push(int num) {
+    if (top == arr.length - 1) {
+      System.out.println("Stack is full");
+    } else {
+      top++;
+      arr[top] = num;
+    }
+  }
+
+  public int pop() {
+    if (top == -1) {
+      System.out.println("Stack Underflow");
+      return -1;
+    } else {
+      int poppedElement = arr[top];
+      top--;
+      return poppedElement;
+    }
+  }
+
+  public int peek() {
+    if (top == -1) {
+      System.out.println("Stack is empty");
+      return -1;
+    } else {
+      return arr[top];
+    }
+  }
+
+  
+  public boolean isEmpty() {
+    return top == -1;
+  }
+
+  public int getSize() {
+    return top + 1;
+  }
+
+  public Stack filter(Predicate < Integer > predicate) {
+    Stack newStack = new Stack(arr.length);
+
+    IntPredicate intPredicate = i -> predicate.test(i);
+    int[] filteredArr = Arrays.stream(arr).filter(intPredicate).toArray();
+
+    //int[] filteredArr = Arrays.stream(arr).filter(predicate).toArray();
+    for (int i = filteredArr.length - 1; i >= 0; i--) {
+      newStack.push(filteredArr[i]);
+    }
+    return newStack;
+  }
+
+ 
+  public void display() {
+    if (top == -1) {
+      System.out.println("Stack is empty!");
+    } else {
+      System.out.print("Stack elements: ");
+      for (int i = top; i >= 0; i--) {
+        System.out.print(arr[i] + " ");
+      }
+      System.out.println();
+    }
+  }
+
+  public static void main(String[] args) {
+  
+    Stack stack = new Stack(5);
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.push(4);
+    stack.push(5);
+
+  
+    Predicate < Integer > isEven = num -> num % 2 == 0;
+ 
+    Predicate < Integer > isOdd = num -> num % 2 != 0;
+
+    Stack filteredStack1 = stack.filter(isEven);
+  
+    Stack filteredStack2 = stack.filter(isOdd);
+    
+    System.out.println("Original stack:");
+    stack.display();
+    System.out.println("\nFiltered stack (even numbers only):");
+    filteredStack1.display();
+
+    System.out.println("\nOriginal stack:");
+    stack.display();
+    System.out.println("\nFiltered stack (odd numbers only):");
+    filteredStack2.display();
+  }
+}
