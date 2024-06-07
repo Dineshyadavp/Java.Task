@@ -1,0 +1,24 @@
+import java.util.*;
+import java.util.HashMap;
+public class HashMapSortByValue {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("Dinesh", 50);
+        map.put("Pvp", 20);
+        map.put("vineeth", 30);
+        map.put("Rohith", 10);
+        Map<String, Integer> sortedMap = sortByValue(map);
+        for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+    }
+    public static HashMap<String, Integer> sortByValue(HashMap<String, Integer> map) {
+        List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
+        HashMap<String, Integer> sortedMap = new LinkedHashMap<>();
+        for (Map.Entry<String, Integer> entry : list) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
+        return sortedMap;
+    }
+}
