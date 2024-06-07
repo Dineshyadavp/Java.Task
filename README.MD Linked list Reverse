@@ -1,0 +1,20 @@
+import java.util.*;
+import java.util.LinkedList;
+import java.util.Iterator;
+  public class Reverse {
+  public static void main(String[] args) {
+     LinkedList<String>d= new LinkedList<String>();
+ 
+          d.add("Dinesh");
+          d.add("Shiva");
+          d.add("Venkatesh");
+          d.add("Vineeth");
+          d.add("Rohith");
+   System.out.println("Original linked list:" + d);  
+    Iterator it = d.descendingIterator();
+     System.out.println("Elements in Reverse Order:");
+     while (it.hasNext()) {
+        System.out.println(it.next());
+     }
+  }
+}
