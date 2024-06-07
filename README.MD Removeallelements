@@ -1,0 +1,15 @@
+import java.util.*;
+import java.util.LinkedList;
+  public class Removeallelements {
+  public static void main(String[] args) {
+     LinkedList<String> d = new LinkedList<String>();
+          d.add("Dinesh");
+          d.add("PVP");
+          d.add("Vineeth");
+          d.add("Rohith");
+          d.add("Shiva");
+   System.out.println("The Original linked list: " + d);
+    d.clear();
+    System.out.println("The New linked list: " + d);
+  }
+}
