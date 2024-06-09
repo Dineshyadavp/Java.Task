@@ -1,0 +1,23 @@
+public class SingleDimensionalArray {
+    public static void main(String[] args) {
+     
+        int[] numbers = {36, 26, 16, 46, 56};
+        System.out.println("Elements of the array:");
+        printArray(numbers);
+        int sum = calculateSum(numbers);
+        System.out.println("Sum of all elements in the array: " + sum);
+    }
+    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+    public static int calculateSum(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
+}
