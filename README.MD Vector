@@ -1,0 +1,17 @@
+import java.util.*;
+public class Vector1 {
+	public static void main(String[] args) {
+		Vector<String>v=new Vector<String>();
+		v.add("Dinesh");
+		v.add("Venkatesh");
+		v.add("Vineeth");
+		v.add("Rohith");
+		v.add("Shiva");
+		Collections.sort(v);
+		System.out.println(v);
+		boolean b=v.isEmpty();
+		System.out.println(b);
+		Set<String>s=new HashSet<>(v);
+		System.out.println(s);
+	}
+}
